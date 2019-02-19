@@ -30,6 +30,7 @@ def word_tally(sentence):
     while len(top_three_values) < 3:
         top_three_values.append(max(word_totals))
         word_totals.remove(max(word_totals))
+        print(top_three_values)
 
     # Top three values now has stored the top three values from the word dictionary
 
@@ -37,12 +38,14 @@ def word_tally(sentence):
     # for each word in the word dictionary
     top_three_words = {}
     for word in word_dict:
+        if len(top_three_words) < 3:
         # for each value in the already created top three values
-        for value in top_three_values:
-            # if the value of particular word key is a value in top three values
-            if word_dict[word] == value:
-            # create that key value pair in top_three_words dictionary
-                top_three_words[word] = value
+            for value in top_three_values:
+                # if the value of particular word key is a value in top three values
+                if word_dict[word] == value:
+                # create that key value pair in top_three_words dictionary
+                    top_three_words[word] = value
+                    print(len(top_three_words))
 
     print(top_three_words)
     
